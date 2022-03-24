@@ -1,1 +1,20 @@
-<p>empleado works!</p>
+<input type="text" #company /> 
+<input type="button" (click)="changeCompany(company.value)" value="Click!" />
+<br />
+<input type="text" #name (keyup)="0" [disabled]='disabledProperty' />
+<p>Nombre: {{name.value}}</p>
+<p>Apellido: {{lastName}}</p>
+<p>Edad: {{getAge()}}</p>
+<p>Responsabilidad: {{getAge() > 18 ? "Mayor de Edad" : "Menor de edad"}}</p>
+<p>Empresa: {{company.value}}</p>
+
+<br />
+{{registryText}} <br/>
+Registrado: <input type='radio' name='nRegistro' value="si" [checked]='registeredProperty' (click)='setRegisterdUser($event)' />
+No Registrado: <input type='radio' name='nRegistro' value="no" (click)='setRegisterdUser($event)' />
+<!-- |Registrado: <input type='checkbox' id='registro' [checked]='registeredProperty' (click)='setRegisterdUser()' /> -->
+
+<!-- {{handleRegistered()}} -->
+
+
+<p>{{test}}</p> <input type="text" [(ngModel)]="test" />
