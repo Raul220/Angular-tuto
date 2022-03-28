@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+
+<form>
+  <input type="text" name="name" [(ngModel)]="name"><br/>
+  <input type="text" name="lastName" [(ngModel)]="lastName"><br/>
+  <input type="button" Value="Sunbmit" (click)="handlesubmit()">
+</form>
+
+<br/>
+<p *ngIf="registreted; else noRegistreted">{{message}}</p>
+
+<ng-template #noRegistreted>
+  <p>No one registreted.</p>
+</ng-template>
+
+<br/>
+<ul>
+  <li *ngFor="let el of entries; let i = index">
+    <span style="font-size: large; font-weight: bold;">{{el.title}}</span>
+    Entry {{i}}
+  </li>
+</ul>
