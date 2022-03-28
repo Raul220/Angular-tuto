@@ -3,11 +3,14 @@
 <form>
   <input type="text" name="name" [(ngModel)]="name"><br/>
   <input type="text" name="lastName" [(ngModel)]="lastName"><br/>
+  <input type="text" name="position" [(ngModel)]="position"><br/>
   <input type="button" Value="Sunbmit" (click)="handlesubmit()">
 </form>
 
 <br/>
 <p *ngIf="registreted; else noRegistreted">{{message}}</p>
+<!-- <p *ngIf="registreted">El <span [ngStyle]="{color: position === 'Director' ? 'red' : 'blue'}">{{position}}</span> {{name}} {{lastName}} se ha registrado.</p> -->
+<p *ngIf="registreted">El <span [ngClass]="{boss: position == 'director'}">{{position}}</span> {{name}} {{lastName}} se ha registrado.</p>
 
 <ng-template #noRegistreted>
   <p>No one registreted.</p>

@@ -10,6 +10,7 @@ export class AppComponent {
   message = '';
   name: string = '';
   lastName: string = '';
+  position: string = '';
   registreted = false;
   entries: Array<any>;
 
@@ -26,7 +27,7 @@ export class AppComponent {
 
   handlesubmit = () => {
     
-    this.message = this.name !== '' && this.lastName !== '' ? `Registry Success. User is ${this.name} ${this.lastName}` :
+    this.message = this.name !== '' && this.lastName !== '' ? `${this.position} ${this.name} ${this.lastName} was registreted` :
     'Fill all the Fields';
     this.registreted = true;
   };
