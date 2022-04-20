@@ -16,19 +16,18 @@ export class AppComponent {
 
   constructor() {
     this.entries = [
-      {title: 'Title-1'},
-      {title: 'Title-2'},
-      {title: 'Title-3'},
-      {title: 'Title-4'},
-      {title: 'Title-5'},
-      {title: 'Title-6'},
+      {name: 'Ramon', lastName: 'Rodriguez', position: 'director'},
+      {name: 'Raul', lastName: 'Perez', position: 'admin'},
+      {name: 'Fredo', lastName: 'Corleone', position: 'indio'},
+      {name: 'Alex', lastName: 'De la Iglesia', position: 'Botones'},
     ]
   }
 
-  handlesubmit = () => {
-    
+  handlesubmit = () => {    
     this.message = this.name !== '' && this.lastName !== '' ? `${this.position} ${this.name} ${this.lastName} was registreted` :
     'Fill all the Fields';
     this.registreted = true;
+    let employ = {name: this.name, lastName: this.lastName, position: this.position};
+    this.entries.push(employ);
   };
 }

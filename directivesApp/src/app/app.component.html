@@ -1,25 +1,24 @@
-<h1>{{title}}</h1>
+<h1>{{ title }}</h1>
 
 <form>
-  <input type="text" name="name" [(ngModel)]="name"><br/>
-  <input type="text" name="lastName" [(ngModel)]="lastName"><br/>
-  <input type="text" name="position" [(ngModel)]="position"><br/>
-  <input type="button" Value="Sunbmit" (click)="handlesubmit()">
+  <input type="text" name="name" [(ngModel)]="name" /><br />
+  <input type="text" name="lastName" [(ngModel)]="lastName" /><br />
+  <input type="text" name="position" [(ngModel)]="position" /><br />
+  <input type="button" Value="Sunbmit" (click)="handlesubmit()" />
 </form>
 
-<br/>
-<p *ngIf="registreted; else noRegistreted">{{message}}</p>
+<br />
+<p *ngIf="registreted; else noRegistreted">{{ message }}</p>
 <!-- <p *ngIf="registreted">El <span [ngStyle]="{color: position === 'Director' ? 'red' : 'blue'}">{{position}}</span> {{name}} {{lastName}} se ha registrado.</p> -->
-<p *ngIf="registreted">El <span [ngClass]="{boss: position == 'director'}">{{position}}</span> {{name}} {{lastName}} se ha registrado.</p>
+<p *ngIf="registreted">
+  El <span [ngClass]="{ boss: position === 'director' }">{{ position }}</span>
+  {{ name }} {{ lastName }} se ha registrado.
+</p>
 
 <ng-template #noRegistreted>
   <p>No one registreted.</p>
 </ng-template>
 
-<br/>
-<ul>
-  <li *ngFor="let el of entries; let i = index">
-    <span style="font-size: large; font-weight: bold;">{{el.title}}</span>
-    Entry {{i}}
-  </li>
-</ul>
+<br />
+
+<app-empleado-hijo-c *ngFor="let el of entries; let i = index" [elList]="el" [index]="i" ></app-empleado-hijo-c>

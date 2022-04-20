@@ -1,0 +1,11 @@
+<div>
+  <span style="font-size: large; font-weight: bold">Name: {{ elList.name }} </span>
+  <span style="font-size: large;">Last Name: {{ elList.lastName }} </span>
+  <span style="font-size: large;">Position: {{ elList.position }} </span>
+  Entry {{ index }}
+</div>
+<app-caracteristicas-empleado-c (features)="agergarCaracteristica($event)"></app-caracteristicas-empleado-c>
+
+<ul>
+  <li *ngFor="let item of array">{{item}}</li>
+</ul>
